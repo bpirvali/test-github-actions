@@ -15,22 +15,22 @@ jobs:
       - run: echo "The name of your branch is ${{ github.ref }} and your repository is ${{ github.repository }}."
 
       # Use Action located in https://github.com/actions
-      #- name: Check out repository code
-      #uses: actions/checkout@v2
+      - name: Check out repository code
+        uses: actions/checkout@v2
 
-      #- run: echo "The ${{ github.repository }} repository has been cloned to the runner."
+      - run: echo "The ${{ github.repository }} repository has been cloned to the runner."
 
-      #- run: echo "Your repository has been copied to the path ${{ github.workspace }} on the runner."
+      - run: echo "Your repository has been copied to the path ${{ github.workspace }} on the runner."
 
-      #- run: echo "The workflow is now ready to test your code on the runner."
+      - run: echo "The workflow is now ready to test your code on the runner."
 
-      #- name: conditional step when event name is pull request
-      #  if: ${{ github.event_name == 'pull_request' }}
-      #  run: echo "This event is a pull request"
+      - name: conditional step when event name is pull request
+        if: ${{ github.event_name == 'pull_request' }}
+        run: echo "This event is a pull request"
 
-      #- name: List files in the repository
-      #  run: |
-      #    ls ${{ github.workspace }}
+      - name: List files in the repository
+        run: |
+          ls ${{ github.workspace }}
 
       #- name: Setup dotnet on runner
       #  uses: actions/setup-dotnet@v1
